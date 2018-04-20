@@ -21,4 +21,15 @@ describe('calculator', function () {
     assert.equal(25, calculator.runningTotal);
   })
 
+  it('can subtract', function(){
+    calculator.clearClick();
+    calculator.numberClick(4);
+    calculator.numberClick(2);
+    calculator.operatorClick("-")
+    calculator.numberClick(1);
+    calculator.numberClick(2);
+    calculator.operatorClick("=");
+    assert.equal(30, calculator.runningTotal);
+  })
+
 });
