@@ -3,7 +3,12 @@ var Calculator = function(){
   this.previousTotal = 0;       // the total of the previous operation
   this.newTotal = true;         // whether the previous operation has just been calculated
   this.runningTotal = 0;        // the current value to operate on the previous total
+
+  // if(this.runningTotal === Infinity){
+  //   this.runningTotal = "cannot divide by 0";
+  // }
 }
+
 
 Calculator.prototype = {
 
@@ -20,7 +25,13 @@ Calculator.prototype = {
   },
 
   divide: function(number){
+    // if the number passed in is not zero, perform the division.
+    if(number !== 0){
     this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+  }else{
+    // if zero is passed in, set runningTotal to string cannot divide by zero.
+    this.runningTotal = "cannot divide by 0";
+  }
   },
 
   numberClick: function(number) {
@@ -79,7 +90,12 @@ Calculator.prototype = {
       this.previousTotal = null;
     }
     this.runningTotal = 0;
-  }
+  },
+
+
+
+
+
 
 };
 

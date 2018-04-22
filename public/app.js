@@ -5,6 +5,7 @@ window.onload = function(){
   var updateView = function() {
     var runningTotal = document.querySelector('#running_total');
     runningTotal.value = calculator.runningTotal;
+
   };
 
   //bind number clicks to number buttons
@@ -32,7 +33,11 @@ window.onload = function(){
     calculator.clearClick();
     updateView();
   };
-  
+
+
+
+
+
 
 
 }
